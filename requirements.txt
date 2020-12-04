@@ -1,4 +1,3 @@
-tweepy==3.9.0
-tmdbv3api==1.6.2
+tweepy~=3.9.0
+tmdbv3api~=1.7.1
 requests~=2.25.0
-wordcloud==1.8.1
