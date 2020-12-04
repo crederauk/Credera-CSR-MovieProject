@@ -30,7 +30,6 @@ class MovieRecommendationEngine:
             if genres_response.ok:
                 all_movie_genres = genres_response.json()
                 self.all_movie_genres = all_movie_genres['genres']
-                return all_movie_genres['genres']
             else:
                 logging.error("There was an error getting the list of movie genres")
 
@@ -59,12 +58,9 @@ class MovieRecommendationEngine:
         return recommendations
 
     def _extract_genres_from_string(self, string):
-        genres_in_input = []
         all_valid_genres = self._get_genres()
         all_valid_genre_names = [genre['name'].lower() for genre in all_valid_genres]
-        for genre in all_valid_genre_names:
-            if genre in string.lower():
-                genres_in_input.append(genre)
+        genres_in_input = [genre for genre in all_valid_genre_names if genre in string.lower()]
         logging.info(f"Detected '{genres_in_input}' in '{string}'")
         return genres_in_input
 
