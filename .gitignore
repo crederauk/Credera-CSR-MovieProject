@@ -1,0 +1,13 @@
+*.env
+__pycache__
+
+# Local IDE config
+.venv
+**/venv/
+.vscode
+.idea
+out/
+**/*.iml
+Pipfile
+application_settings.json
+env.json
