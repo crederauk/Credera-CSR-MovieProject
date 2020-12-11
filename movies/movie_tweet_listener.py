@@ -24,6 +24,8 @@ class MovieTweetListener(tweepy.StreamListener):
             reply_text = f"@{status.author.name} You should try watching '{random_recommendation}'. Other people who watched it gave it an " \
                          f"average rating of {random_recommendation.vote_average}/10 "
             logging.info(f"Will tweet back: {reply_text}")
-            self.twitter_api.update_status(status=reply_text, in_reply_to_status_id=status.id)
+            self.twitter_api.update_status(status=reply_text,
+                                           in_reply_to_status_id=status.id,
+                                           auto_populate_reply_metadata=True)
         except Exception:
             logging.error("Could not obtain a movie recommendation for this Tweet")
