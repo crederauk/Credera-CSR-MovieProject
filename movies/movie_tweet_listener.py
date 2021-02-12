@@ -21,7 +21,7 @@ class MovieTweetListener(tweepy.StreamListener):
             print(type(random_recommendation))
             print(random_recommendation)
             logging.info(f"Selected '{random_recommendation}'!")
-            reply_text = f"@{status.author.name} You should try watching '{random_recommendation}'. Other people who watched it gave it an " \
+            reply_text = f"@{status.author.name} You should try watching '{random_recommendation.original_title}'. Other people who watched it gave it an " \
                          f"average rating of {random_recommendation.vote_average}/10 "
             logging.info(f"Will tweet back: {reply_text}")
             self.twitter_api.update_status(status=reply_text,
