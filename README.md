@@ -1,4 +1,4 @@
-# DMW CSR Movie Project
+# Credera CSR Movie Project
 
 This project is a simple Python application that has been built for a charitable and educational purpose only and comes with no  warranty or support. It has been released under the Apache 2.0 license. 
  
